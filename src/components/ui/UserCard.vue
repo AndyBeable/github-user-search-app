@@ -30,12 +30,40 @@
         <p>80</p>
       </div>
     </div>
-    <div class="left-container">
-      <div class="user-location-container">
-        <div class="user-location-icon">
-          <img src="" alt="" />
+    <div class="user-links">
+      <div class="left-container">
+        <div class="user-location-container">
+          <div class="user-location-icon">
+            <img src="" alt="" />
+          </div>
+          <h6 class="user-link-text">London, United Kingdom</h6>
         </div>
-        <h6>London, United Kingdom</h6>
+        <div class="user-github-container">
+          <div class="user-github-icon">
+            <img src="" alt="" />
+          </div>
+          <h6 class="user-link-text">
+            <a href="https://github.com/AndyBeable">
+              https://github.com/AndyBeable
+            </a>
+          </h6>
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="user-twitter-container">
+          <div class="user-twitter-icon">
+            <img src="" alt="" />
+          </div>
+          <h6 class="user-link-text">Not available</h6>
+        </div>
+        <div class="user-company-container">
+          <div class="user-company-icon">
+            <img src="" alt="" />
+          </div>
+          <h6 class="user-link-text">
+            Freelancer
+          </h6>
+        </div>
       </div>
     </div>
   </div>
@@ -43,6 +71,10 @@
 
 <style scoped>
 .user-stats {
+  display: flex;
+}
+
+.user-links {
   display: flex;
 }
 </style>
