@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <wrapper>
+    <the-header></the-header>
+    <search-bar></search-bar>
+    <user-card></user-card>
+  </wrapper>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from './components/layout/TheHeader.vue';
+import Wrapper from './components/layout/Wrapper.vue';
+import SearchBar from './components/ui/SearchBar.vue';
+import UserCard from './components/ui/UserCard.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    TheHeader,
+    Wrapper,
+    SearchBar,
+    UserCard,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Space Mono', monospace, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f8ff;
 }
 </style>
