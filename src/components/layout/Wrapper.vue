@@ -10,6 +10,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 20rem;
+  height: 50rem;
+  width: 80%;
+  margin: 0 auto;
 }
 </style>

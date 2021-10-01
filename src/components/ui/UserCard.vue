@@ -70,6 +70,14 @@
 </template>
 
 <style scoped>
+.user-card-container {
+  background-color: #fff;
+  width: 80%;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px 3px #c4c9e470;
+}
+
 .user-stats {
   display: flex;
 }
