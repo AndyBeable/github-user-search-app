@@ -98,10 +98,16 @@ export default {
 
 .user-stats {
   display: flex;
+  justify-content: center;
+}
+
+.left-container {
+  margin-right: 1rem;
 }
 
 .user-links {
   display: flex;
+  justify-content: space-around;
 }
 
 .user-location-container,
