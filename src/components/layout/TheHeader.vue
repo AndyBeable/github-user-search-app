@@ -3,7 +3,7 @@
     <div class="header-title">
       <h1>devfinder</h1>
     </div>
-    <div class="header-theme">
+    <!-- <div class="header-theme">
       <div class="theme-light">
         <h2 class="theme-light-text">Light</h2>
         <svg></svg>
@@ -12,7 +12,7 @@
         <h2 class="theme-dark-text">Dark</h2>
         <svg></svg>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

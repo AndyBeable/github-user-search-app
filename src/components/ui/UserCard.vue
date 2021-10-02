@@ -34,7 +34,7 @@
       <div class="left-container">
         <div class="user-location-container">
           <div class="user-location-icon">
-            <img src="" alt="" />
+            <img :src="image" alt="Location" />
           </div>
           <h6 class="user-link-text">London, United Kingdom</h6>
         </div>
@@ -68,6 +68,18 @@
     </div>
   </div>
 </template>
+
+<script>
+import image from '../../../public/assets/icon-location.svg';
+
+export default {
+  data() {
+    return {
+      image: image,
+    };
+  },
+};
+</script>
 
 <style scoped>
 .user-card-container {
