@@ -34,13 +34,13 @@
       <div class="left-container">
         <div class="user-location-container">
           <div class="user-location-icon">
-            <img :src="image" alt="Location" />
+            <img :src="locationIcon" alt="Location" />
           </div>
           <h6 class="user-link-text">London, United Kingdom</h6>
         </div>
-        <div class="user-github-container">
-          <div class="user-github-icon">
-            <img src="" alt="" />
+        <div class="user-website-container">
+          <div class="user-website-icon">
+            <img :src="websiteIcon" alt="" />
           </div>
           <h6 class="user-link-text">
             <a href="https://github.com/AndyBeable">
@@ -52,13 +52,13 @@
       <div class="right-container">
         <div class="user-twitter-container">
           <div class="user-twitter-icon">
-            <img src="" alt="" />
+            <img :src="twitterIcon" alt="" />
           </div>
           <h6 class="user-link-text">Not available</h6>
         </div>
         <div class="user-company-container">
           <div class="user-company-icon">
-            <img src="" alt="" />
+            <img :src="companyIcon" alt="" />
           </div>
           <h6 class="user-link-text">
             Freelancer
@@ -70,12 +70,18 @@
 </template>
 
 <script>
-import image from '../../../public/assets/icon-location.svg';
+import locationIcon from '../../../public/assets/icon-location.svg';
+import websiteIcon from '../../../public/assets/icon-website.svg';
+import twitterIcon from '../../../public/assets/icon-twitter.svg';
+import companyIcon from '../../../public/assets/icon-company.svg';
 
 export default {
   data() {
     return {
-      image: image,
+      locationIcon: locationIcon,
+      websiteIcon: websiteIcon,
+      twitterIcon: twitterIcon,
+      companyIcon: companyIcon,
     };
   },
 };
@@ -96,5 +102,20 @@ export default {
 
 .user-links {
   display: flex;
+}
+
+.user-location-container,
+.user-website-container,
+.user-twitter-container,
+.user-company-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-location-icon,
+.user-website-icon,
+.user-twitter-icon,
+.user-company-container img {
+  margin-right: 1rem;
 }
 </style>
