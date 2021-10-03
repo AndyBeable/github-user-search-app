@@ -64,4 +64,10 @@ body {
   padding: 0;
   background-color: #f6f8ff;
 }
+
+h3,
+h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 </style>

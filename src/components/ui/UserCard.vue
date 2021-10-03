@@ -5,10 +5,14 @@
         <img :src="avatar" alt="Avatar" />
       </div>
       <div class="user-details">
-        <h3>{{ name }}</h3>
-        <h5>@{{ login }}</h5>
+        <div>
+          <h3>{{ name }}</h3>
+          <h5>@{{ login }}</h5>
+        </div>
+        <div>
+          <p>Joined {{ joined }}</p>
+        </div>
       </div>
-      <p>{{ joined }}</p>
     </div>
     <div class="user-details-profile">
       <p>
@@ -117,6 +121,11 @@ export default {
   }
 }
 
+.user-details-container {
+  display: flex;
+  align-items: center;
+}
+
 .user-details-profile {
   width: 80%;
   margin: 0 auto;
@@ -130,6 +139,7 @@ export default {
 .user-avatar img {
   width: 117px;
   border-radius: 100%;
+  margin-right: 1rem;
 }
 
 .user-stats {
