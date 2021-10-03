@@ -1,25 +1,60 @@
 <template>
   <div class="search-container">
-    <img src="/public/assets/icon-search.svg" alt="" />
-    <form class="search-input-form">
+    <div class="search-sub-container">
+      <img :src="searchIcon" alt="" />
       <input
+        class="search-input-form"
         type="text"
-        class="input-field"
         name="input-field"
-        placeholder="Search Github username"
+        placeholder="Search GitHub username..."
       />
-    </form>
-    <div class="search-error">
-      <p class="no-results">No results</p>
     </div>
-    <button class="search-button">
-      <p>Search</p>
-    </button>
+    <div class="button-container">
+      <!-- <p class="no-results">No results</p> -->
+      <button class="search-button">
+        Search
+      </button>
+    </div>
   </div>
 </template>
+
+<script>
+import searchIcon from '../../../public/assets/icon-search.svg';
+
+export default {
+  data() {
+    return {
+      searchIcon: searchIcon,
+    };
+  },
+};
+</script>
 
 <style scoped>
 .search-container {
   display: flex;
+  justify-content: space-between;
+  background-color: #fefefe;
+  box-shadow: 0 16px 30px -10px rgb(70 96 187 / 20%);
+  padding: 15px 25px;
+  margin: 25px 0;
+  border-radius: 15px;
+  width: 80%;
+}
+
+.search-sub-container {
+  display: flex;
+  align-items: center;
+}
+.search-sub-container img {
+  margin: 1rem;
+}
+
+input {
+  border: none;
+  caret-color: blue;
+  line-height: 20px;
+  font-family: 'Space Mono', monospace;
+  widows: 300px;
 }
 </style>
