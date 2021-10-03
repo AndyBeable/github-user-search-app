@@ -5,29 +5,30 @@
         <img src="" alt="" />
       </div>
       <div class="user-details">
-        <h3>User Name</h3>
-        <h5>@Username</h5>
+        <h3>{{ name }}</h3>
+        <h5>@{{ login }}</h5>
       </div>
-      <p>Joined 1 October 2021</p>
+      <p>{{ joined }}</p>
     </div>
     <div class="user-details-profile">
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aut
-        facere, nihil, veritatis ut omnis cupiditate reiciendis.
+        <!-- {{ bio }} -->
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut omnis modi
+        corporis.
       </p>
     </div>
     <div class="user-stats">
       <div class="stat">
         <h4>Repos</h4>
-        <h2>8</h2>
+        <h2>{{ repos }}</h2>
       </div>
       <div class="stat">
         <h4>Followers</h4>
-        <h2>8233</h2>
+        <h2>{{ followers }}</h2>
       </div>
       <div class="stat">
         <h4>Following</h4>
-        <h2>80</h2>
+        <h2>{{ following }}</h2>
       </div>
     </div>
     <div class="user-links">
@@ -54,14 +55,14 @@
           <div class="user-twitter-icon">
             <img :src="twitterIcon" alt="" />
           </div>
-          <h6 class="user-link-text">Not available</h6>
+          <h6 class="user-link-text">{{ twitter }}</h6>
         </div>
         <div class="user-company-container">
           <div class="user-company-icon">
             <img :src="companyIcon" alt="" />
           </div>
           <h6 class="user-link-text">
-            Freelancer
+            {{ company }}
           </h6>
         </div>
       </div>
@@ -76,6 +77,19 @@ import twitterIcon from '../../../public/assets/icon-twitter.svg';
 import companyIcon from '../../../public/assets/icon-company.svg';
 
 export default {
+  props: [
+    'name',
+    'login',
+    'joined',
+    'bio',
+    'repos',
+    'followers',
+    'following',
+    'location',
+    'blog',
+    'twitter',
+    'company',
+  ],
   data() {
     return {
       locationIcon: locationIcon,

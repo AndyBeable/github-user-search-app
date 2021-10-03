@@ -18,23 +18,6 @@
   </div>
 </template>
 
-<script>
-import axios from 'axios';
-export default {
-  data() {
-    return {
-      userData: null,
-    };
-  },
-  created: function() {
-    axios.get('https://api.github.com/users/AndyBeable').then((response) => {
-      this.userData = response.data;
-      console.log(this.userData);
-    });
-  },
-};
-</script>
-
 <style scoped>
 .search-container {
   display: flex;
