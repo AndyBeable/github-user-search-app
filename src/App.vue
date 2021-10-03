@@ -65,6 +65,10 @@ body {
   background-color: #f6f8ff;
 }
 
+p {
+  color: #4b6a9b;
+}
+
 h3,
 h5 {
   margin-top: 0;

@@ -107,6 +107,11 @@ export default {
 </script>
 
 <style scoped>
+h5 {
+  color: #0079ff;
+  font-weight: 400;
+}
+
 .user-card-container {
   background-color: #fff;
   /* width: 80%; */
