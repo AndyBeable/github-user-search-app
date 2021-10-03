@@ -2,7 +2,7 @@
   <div class="user-card-container">
     <div class="user-details-container">
       <div class="user-avatar">
-        <img src="" alt="" />
+        <img :src="avatar" alt="Avatar" />
       </div>
       <div class="user-details">
         <h3>{{ name }}</h3>
@@ -78,6 +78,7 @@ import companyIcon from '../../../public/assets/icon-company.svg';
 
 export default {
   props: [
+    'avatar',
     'name',
     'login',
     'joined',
@@ -121,9 +122,14 @@ export default {
   margin: 0 auto;
 }
 
-.test {
+/* .test {
   display: flex;
   justify-content: space-evenly;
+} */
+
+.user-avatar img {
+  width: 117px;
+  border-radius: 100%;
 }
 
 .user-stats {

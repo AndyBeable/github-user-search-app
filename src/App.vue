@@ -3,6 +3,7 @@
     <the-header></the-header>
     <search-bar></search-bar>
     <user-card
+      :avatar="userData.avatar_url"
       :name="userData.name"
       :login="userData.login"
       :joined="userData.created_at"
