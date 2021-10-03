@@ -23,13 +23,13 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      repos: null,
+      userData: null,
     };
   },
   created: function() {
     axios.get('https://api.github.com/users/AndyBeable').then((response) => {
-      this.repos = response.data;
-      console.log(this.repos);
+      this.userData = response.data;
+      console.log(this.userData);
     });
   },
 };
