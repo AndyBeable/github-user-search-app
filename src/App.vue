@@ -70,4 +70,9 @@ h5 {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+button,
+input {
+  font-family: 'Space Mono', monospace;
+}
 </style>

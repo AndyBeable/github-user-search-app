@@ -36,7 +36,7 @@ export default {
   justify-content: space-between;
   background-color: #fefefe;
   box-shadow: 0 16px 30px -10px rgb(70 96 187 / 20%);
-  padding: 15px 25px;
+  padding: 5px 25px;
   margin: 25px 0;
   border-radius: 15px;
   width: 80%;
@@ -52,9 +52,22 @@ export default {
 
 input {
   border: none;
-  caret-color: blue;
-  line-height: 20px;
-  font-family: 'Space Mono', monospace;
-  widows: 300px;
+  caret-color: #0079ff;
+  line-height: 30px;
+  width: 300px;
+}
+
+button {
+  background-color: #0079ff;
+  color: #fefefe;
+  border-radius: 10px;
+  padding: 1.2rem 2rem;
+  border: none;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #60abff;
 }
 </style>
