@@ -18,16 +18,16 @@
     </div>
     <div class="user-stats">
       <div class="stat">
-        <p>Repos</p>
-        <p>8</p>
+        <h4>Repos</h4>
+        <h2>8</h2>
       </div>
       <div class="stat">
-        <p>Followers</p>
-        <p>82343</p>
+        <h4>Followers</h4>
+        <h2>8233</h2>
       </div>
       <div class="stat">
-        <p>Following</p>
-        <p>80</p>
+        <h4>Following</h4>
+        <h2>80</h2>
       </div>
     </div>
     <div class="user-links">
@@ -90,15 +90,42 @@ export default {
 <style scoped>
 .user-card-container {
   background-color: #fff;
-  width: 80%;
+  /* width: 80%; */
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 3px 10px 3px #c4c9e470;
 }
 
+@media screen and (min-width: 768px) {
+  .user-card-container {
+    width: 80%;
+  }
+}
+
+.user-details-profile {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .user-stats {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: #f6f8ff;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .user-stats {
+    width: 80%;
+  }
+}
+
+.user-stats h4 {
+  color: #4b6a9b;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .left-container {
@@ -106,8 +133,15 @@ export default {
 }
 
 .user-links {
-  display: flex;
-  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .user-links {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .user-location-container,
@@ -115,7 +149,16 @@ export default {
 .user-twitter-container,
 .user-company-container {
   display: flex;
-  align-items: center;
+  margin-bottom: -1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .user-location-container,
+  .user-website-container,
+  .user-twitter-container {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .user-location-icon,
