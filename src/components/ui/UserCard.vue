@@ -7,8 +7,8 @@
       <div class="user-details">
         <h3>User Name</h3>
         <h5>@Username</h5>
-        <p>Joined 1 October 2021</p>
       </div>
+      <p>Joined 1 October 2021</p>
     </div>
     <div class="user-details-profile">
       <p>
@@ -107,6 +107,11 @@ export default {
   margin: 0 auto;
 }
 
+.test {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .user-stats {
   display: flex;
   justify-content: space-evenly;
@@ -149,6 +154,7 @@ export default {
 .user-twitter-container,
 .user-company-container {
   display: flex;
+  align-items: center;
   margin-bottom: -1.2rem;
 }
 
