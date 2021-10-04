@@ -82,7 +82,7 @@ input {
   border: none;
   caret-color: #0079ff;
   line-height: 30px;
-  width: 210px;
+  width: 185px;
 }
 
 @media screen and (min-width: 768px) {
