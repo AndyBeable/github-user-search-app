@@ -69,6 +69,12 @@ p {
   color: #4b6a9b;
 }
 
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 h3,
 h5 {
   margin-top: 0;

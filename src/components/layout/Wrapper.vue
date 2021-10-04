@@ -10,7 +10,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* height: 70rem; */
+  height: 130vh;
   width: 92%;
   margin: 0 auto;
 }

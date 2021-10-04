@@ -103,6 +103,11 @@ export default {
       companyIcon: companyIcon,
     };
   },
+  methods: {
+    convertData() {
+      console.log(this.joined);
+    },
+  },
 };
 </script>
 
@@ -135,11 +140,6 @@ h5 {
   width: 80%;
   margin: 0 auto;
 }
-
-/* .test {
-  display: flex;
-  justify-content: space-evenly;
-} */
 
 .user-avatar img {
   width: 117px;
