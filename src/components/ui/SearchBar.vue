@@ -110,4 +110,14 @@ button {
 button:hover {
   background-color: #60abff;
 }
+
+.button-container {
+  display: flex;
+}
+
+p {
+  color: #f74646;
+  font-weight: 700;
+  margin-right: 15px;
+}
 </style>
