@@ -73,13 +73,17 @@
             <span v-else>Not available</span>
           </h6>
         </div>
-        <div class="user-company-container">
+        <div
+          class="user-company-container"
+          :class="{ 'opacity-50': !user.company }"
+        >
           <div class="user-company-icon">
             <img :src="companyIcon" alt="" />
           </div>
-          <h6 class="user-link-text">
+          <h6 v-if="user.company" class="user-link-text">
             {{ user.company }}
           </h6>
+          <h6 v-else>Not available</h6>
         </div>
       </div>
     </div>
