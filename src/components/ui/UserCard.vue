@@ -43,14 +43,18 @@
           </div>
           <h6 class="user-link-text">London, United Kingdom</h6>
         </div>
-        <div class="user-website-container">
+        <div
+          class="user-website-container"
+          :class="{ 'opacity-50': !user.blog }"
+        >
           <div class="user-website-icon">
             <img :src="websiteIcon" alt="" />
           </div>
           <h6 class="user-link-text">
-            <a :href="user.blog" target="_blank">
+            <a v-if="user.blog" :href="user.blog" target="_blank">
               {{ user.blog }}
             </a>
+            <span v-else>Not available</span>
           </h6>
         </div>
       </div>
@@ -101,6 +105,9 @@ export default {
   computed: {
     twitterUrl() {
       return `http://twitter.com/${this.user.twitter_username}`;
+    },
+    companyUrl() {
+      return this.user.organizations_url;
     },
   },
   methods: {
