@@ -2,15 +2,15 @@
   <div class="user-card-container">
     <div class="user-details-container">
       <div class="user-avatar">
-        <img :src="avatar" alt="Avatar" />
+        <img :src="user.avatar_url" :alt="user.name" />
       </div>
       <div class="user-details">
         <div>
-          <h3>{{ name }}</h3>
-          <h5>@{{ login }}</h5>
+          <h3>{{ user.name }}</h3>
+          <h5>@{{ user.login }}</h5>
         </div>
         <div>
-          <p>Joined {{ joined }}</p>
+          <p>Joined {{ user.created_at }}</p>
         </div>
       </div>
     </div>
@@ -24,15 +24,15 @@
     <div class="user-stats">
       <div class="stat">
         <h4>Repos</h4>
-        <h2>{{ repos }}</h2>
+        <h2>{{ user.public_repos }}</h2>
       </div>
       <div class="stat">
         <h4>Followers</h4>
-        <h2>{{ followers }}</h2>
+        <h2>{{ user.followers }}</h2>
       </div>
       <div class="stat">
         <h4>Following</h4>
-        <h2>{{ following }}</h2>
+        <h2>{{ user.following }}</h2>
       </div>
     </div>
     <div class="user-links">
@@ -48,25 +48,33 @@
             <img :src="websiteIcon" alt="" />
           </div>
           <h6 class="user-link-text">
-            <a href="https://github.com/AndyBeable">
-              https://github.com/AndyBeable
+            <a :href="user.blog" target="_blank">
+              {{ user.blog }}
             </a>
           </h6>
         </div>
       </div>
       <div class="right-container">
-        <div class="user-twitter-container">
+        <div
+          class="user-twitter-container"
+          :class="{ 'opacity-50': !user.twitter_username }"
+        >
           <div class="user-twitter-icon">
             <img :src="twitterIcon" alt="" />
           </div>
-          <h6 class="user-link-text">{{ twitter }}</h6>
+          <h6 class="user-link-text">
+            <a v-if="user.twitter_username" :href="twitterUrl" target="_blank">
+              {{ user.twitter_username }}
+            </a>
+            <span v-else>Not available</span>
+          </h6>
         </div>
         <div class="user-company-container">
           <div class="user-company-icon">
             <img :src="companyIcon" alt="" />
           </div>
           <h6 class="user-link-text">
-            {{ company }}
+            {{ user.company }}
           </h6>
         </div>
       </div>
@@ -81,20 +89,7 @@ import twitterIcon from '../../../public/assets/icon-twitter.svg';
 import companyIcon from '../../../public/assets/icon-company.svg';
 
 export default {
-  props: [
-    'avatar',
-    'name',
-    'login',
-    'joined',
-    'bio',
-    'repos',
-    'followers',
-    'following',
-    'location',
-    'blog',
-    'twitter',
-    'company',
-  ],
+  props: ['user'],
   data() {
     return {
       locationIcon: locationIcon,
@@ -102,6 +97,11 @@ export default {
       twitterIcon: twitterIcon,
       companyIcon: companyIcon,
     };
+  },
+  computed: {
+    twitterUrl() {
+      return `http://twitter.com/${this.user.twitter_username}`;
+    },
   },
   methods: {
     convertData() {

@@ -1,21 +1,8 @@
 <template>
   <wrapper>
     <the-header></the-header>
-    <search-bar></search-bar>
-    <user-card
-      :avatar="userData.avatar_url"
-      :name="userData.name"
-      :login="userData.login"
-      :joined="userData.created_at"
-      :bio="userData.bio"
-      :repos="userData.public_repos"
-      :followers="userData.followers"
-      :following="userData.following"
-      :location="userData.location"
-      :blog="userData.blog"
-      :twitter="userData.twitter_username"
-      :company="userData.company"
-    ></user-card>
+    <search-bar @on-search="searchUser" :has-error="hasError"></search-bar>
+    <user-card v-if="userData" :user="userData"></user-card>
   </wrapper>
 </template>
 
@@ -37,13 +24,25 @@ export default {
   data() {
     return {
       userData: null,
+      hasError: false,
     };
   },
-  created: function() {
-    axios.get('https://api.github.com/users/AndyBeable').then((response) => {
-      this.userData = response.data;
-      console.log(this.userData);
-    });
+  created() {
+    this.searchUser('octocat');
+  },
+  methods: {
+    searchUser(query) {
+      this.hasError = false;
+
+      axios
+        .get(`https://api.github.com/users/${query}`)
+        .then((response) => {
+          this.userData = response.data;
+        })
+        .catch(() => {
+          this.hasError = true;
+        });
+    },
   },
 };
 </script>
@@ -84,5 +83,9 @@ h5 {
 button,
 input {
   font-family: 'Space Mono', monospace;
+}
+
+.opacity-50 {
+  opacity: 50%;
 }
 </style>

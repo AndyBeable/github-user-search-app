@@ -3,6 +3,7 @@
     <div class="search-sub-container">
       <img :src="searchIcon" alt="" />
       <input
+        v-model="query"
         class="search-input-form"
         type="text"
         name="input-field"
@@ -10,8 +11,8 @@
       />
     </div>
     <div class="button-container">
-      <!-- <p class="no-results">No results</p> -->
-      <button class="search-button">
+      <p v-if="hasError" class="no-results">No results</p>
+      <button class="search-button" @click.prevent="search">
         Search
       </button>
     </div>
@@ -22,10 +23,22 @@
 import searchIcon from '../../../public/assets/icon-search.svg';
 
 export default {
+  props: {
+    hasError: {
+      type: Boolean,
+      required: true,
+    },
+  },
   data() {
     return {
       searchIcon: searchIcon,
+      query: '',
     };
+  },
+  methods: {
+    search() {
+      this.$emit('onSearch', this.query);
+    },
   },
 };
 </script>
