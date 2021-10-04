@@ -33,13 +33,22 @@ export default {
 <style scoped>
 .search-container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
   background-color: #fefefe;
   box-shadow: 0 16px 30px -10px rgb(70 96 187 / 20%);
-  padding: 5px 25px;
   margin: 25px 0;
   border-radius: 15px;
-  width: 80%;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .search-container {
+    width: 80%;
+    justify-content: space-between;
+    padding: 0.5rem 2.5rem;
+  }
 }
 
 .search-sub-container {
@@ -47,24 +56,42 @@ export default {
   align-items: center;
 }
 .search-sub-container img {
-  margin: 1rem;
+  margin: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .search-sub-container img {
+    margin: 1rem;
+  }
 }
 
 input {
   border: none;
   caret-color: #0079ff;
   line-height: 30px;
-  width: 300px;
+  width: 210px;
+}
+
+@media screen and (min-width: 768px) {
+  input {
+    width: 300px;
+  }
 }
 
 button {
   background-color: #0079ff;
   color: #fefefe;
-  border-radius: 10px;
-  padding: 1.2rem 2rem;
   border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
   transition: 0.2s ease;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  button {
+    padding: 1.2rem 2rem;
+  }
 }
 
 button:hover {
