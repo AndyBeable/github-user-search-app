@@ -15,11 +15,10 @@
       </div>
     </div>
     <div class="user-details-profile">
-      <p>
-        <!-- {{ bio }} -->
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut omnis modi
-        corporis.
+      <p v-if="user.bio">
+        {{ user.bio }}
       </p>
+      <p v-else>This profile has no bio.</p>
     </div>
     <div class="user-stats">
       <div class="stat">
