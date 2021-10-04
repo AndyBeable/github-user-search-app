@@ -146,6 +146,14 @@ h5 {
   align-items: center;
 }
 
+@media screen and (min-width: 768px) {
+  .user-details {
+    display: flex;
+    justify-content: space-between;
+    width: 72%;
+  }
+}
+
 .user-details-profile {
   width: 80%;
   margin: 0 auto;
