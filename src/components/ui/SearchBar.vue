@@ -98,8 +98,12 @@ input {
   }
 }
 
+.LIGHT input[type='text']::placeholder {
+  color: var(--bg-white);
+}
+
 button {
-  background-color: var(--light-blue);
+  background-color: var(--light-blue-bold);
   color: var(--bg-light-color);
   border: none;
   border-radius: 10px;
