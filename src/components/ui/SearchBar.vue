@@ -49,12 +49,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #fefefe;
+  background-color: var(--bg-white);
   box-shadow: 0 16px 30px -10px rgb(70 96 187 / 20%);
   margin: 25px 0;
   border-radius: 15px;
   width: 100%;
   padding: 0.5rem 0;
+}
+
+.dark .search-container {
+  background-color: var(--bg-dark-color-2);
+  box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -81,7 +86,7 @@ export default {
 
 input {
   border: none;
-  caret-color: #0079ff;
+  caret-color: var(--light-blue);
   line-height: 30px;
   width: 185px;
 }
@@ -93,8 +98,8 @@ input {
 }
 
 button {
-  background-color: #0079ff;
-  color: #fefefe;
+  background-color: var(--light-blue);
+  color: var(--bg-light-color);
   border: none;
   border-radius: 10px;
   padding: 0.8rem 1.2rem;
@@ -109,7 +114,7 @@ button {
 }
 
 button:hover {
-  background-color: #60abff;
+  background-color: var(--light-blue);
 }
 
 .button-container {

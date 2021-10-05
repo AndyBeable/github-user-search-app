@@ -121,16 +121,20 @@ export default {
 
 <style scoped>
 h5 {
-  color: #0079ff;
+  color: var(--light-blue-bold);
   font-weight: 400;
 }
 
 .user-card-container {
-  background-color: #fff;
-  /* width: 80%; */
+  background-color: var(--bg-white);
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 3px 10px 3px #c4c9e470;
+}
+
+.dark .user-card-container {
+  background-color: var(--bg-dark-color-2);
+  box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -167,7 +171,7 @@ h5 {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  background-color: var(--light-color);
+  background-color: var(--bg-light-color);
   margin: 0 auto;
   border-radius: 16px;
 }

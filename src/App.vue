@@ -1,9 +1,11 @@
 <template>
-  <wrapper>
-    <the-header></the-header>
-    <search-bar @on-search="searchUser" :has-error="hasError"></search-bar>
-    <user-card v-if="userData" :user="userData"></user-card>
-  </wrapper>
+  <div class="app" :class="mode">
+    <wrapper>
+      <the-header :mode="mode"></the-header>
+      <search-bar @on-search="searchUser" :has-error="hasError"></search-bar>
+      <user-card v-if="userData" :user="userData"></user-card>
+    </wrapper>
+  </div>
 </template>
 
 <script>
@@ -25,6 +27,7 @@ export default {
     return {
       userData: null,
       hasError: false,
+      mode: 'dark',
     };
   },
   created() {
@@ -52,7 +55,14 @@ export default {
 
 :root {
   --bg-light-color: #f6f8ff;
+  --bg-white: #fefefe;
   --text-light-color: #4b6a9b;
+  --bg-dark-color: #141d2f;
+  --bg-dark-color-2: #1e2a47;
+  --text-dark-color: #ffffff;
+  --light-blue-bold: #0079ff;
+  --light-blue: #60abff;
+  --light-grey: #697c9a;
 }
 
 * {
@@ -66,7 +76,14 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+.app {
   background-color: var(--bg-light-color);
+}
+
+.dark {
+  background: var(--bg-dark-color);
 }
 
 p {

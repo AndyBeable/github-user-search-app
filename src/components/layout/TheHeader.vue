@@ -2,7 +2,7 @@
   <div class="header-container">
     <h1>devfinder</h1>
     <div class="mode-container">
-      <button>DARK</button>
+      <button @click="toggleTheme">{{ mode }}</button>
       <img :src="moon" />
     </div>
   </div>
@@ -12,10 +12,19 @@
 import moonIcon from '../../../public/assets/icon-moon.svg';
 
 export default {
+  props: ['mode'],
   data() {
     return {
       moon: moonIcon,
+      theme: '',
     };
+  },
+  methods: {
+    toggleTheme() {
+      console.log('test');
+      this.theme = this.theme == 'darkMode' ? '' : 'darkMode';
+      document.documentElement.setAttribute('data-theme', this.theme);
+    },
   },
 };
 </script>
@@ -27,6 +36,11 @@ export default {
   align-items: center;
   width: 80%;
 }
+
+.dark h1 {
+  color: var(--bg-white);
+}
+
 .mode-container {
   display: flex;
   align-items: center;
@@ -38,5 +52,6 @@ button {
   color: #697c9a;
   background-color: inherit;
   border: none;
+  cursor: pointer;
 }
 </style>
