@@ -3,23 +3,22 @@
     <h1>devfinder</h1>
     <div class="mode-container">
       <button @click="$emit('toggle')">{{ mode }}</button>
-      <img :src="moon" />
+      <img v-if="mode === 'light'" :src="sun" />
+      <img v-else :src="moon" />
     </div>
   </div>
 </template>
 
 <script>
 import moonIcon from '../../../public/assets/icon-moon.svg';
-
+import sunIcon from '../../../public/assets/icon-sun.svg';
 export default {
   props: ['mode'],
   data() {
     return {
       moon: moonIcon,
+      sun: sunIcon,
     };
-  },
-  methods: {
-    toggleTheme() {},
   },
 };
 </script>
@@ -32,7 +31,7 @@ export default {
   width: 80%;
 }
 
-.dark h1 {
+.light h1 {
   color: var(--bg-white);
 }
 

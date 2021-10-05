@@ -57,7 +57,7 @@ export default {
   padding: 0.5rem 0;
 }
 
-.dark .search-container {
+.light .search-container {
   background-color: var(--bg-dark-color-2);
   box-shadow: none;
 }

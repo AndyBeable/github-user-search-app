@@ -132,7 +132,7 @@ h5 {
   box-shadow: 0 3px 10px 3px #c4c9e470;
 }
 
-.dark .user-card-container {
+.light .user-card-container {
   background-color: var(--bg-dark-color-2);
   box-shadow: none;
 }
@@ -156,6 +156,10 @@ h5 {
   }
 }
 
+.light .user-details h3 {
+  color: var(--bg-white);
+}
+
 .user-details-profile {
   width: 80%;
   margin: 0 auto;
@@ -176,7 +180,7 @@ h5 {
   border-radius: 16px;
 }
 
-.dark .user-stats {
+.light .user-stats {
   background-color: var(--bg-dark-color);
   color: var(--bg-white);
 }

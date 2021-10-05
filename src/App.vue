@@ -34,13 +34,6 @@ export default {
     this.searchUser('octocat');
   },
   methods: {
-    toggle() {
-      if (this.mode === 'dark') {
-        this.mode = 'light';
-      } else {
-        this.mode = 'dark';
-      }
-    },
     searchUser(query) {
       this.hasError = false;
 
@@ -89,7 +82,7 @@ body {
   background-color: var(--bg-light-color);
 }
 
-.dark {
+.light {
   background: var(--bg-dark-color);
 }
 
