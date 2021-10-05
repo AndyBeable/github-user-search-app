@@ -116,6 +116,6 @@ input {
 }
 
 .opacity-50 {
-  opacity: 50%;
+  opacity: 90%;
 }
 </style>
