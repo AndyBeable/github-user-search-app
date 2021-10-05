@@ -1,5 +1,5 @@
 <template>
-  <div class="app" :class="mode">
+  <div class="app" :class="mode" @toggle="toggle">
     <wrapper>
       <the-header :mode="mode"></the-header>
       <search-bar @on-search="searchUser" :has-error="hasError"></search-bar>
@@ -27,13 +27,20 @@ export default {
     return {
       userData: null,
       hasError: false,
-      mode: 'dark',
+      mode: 'light',
     };
   },
   created() {
     this.searchUser('octocat');
   },
   methods: {
+    toggle() {
+      if (this.mode === 'dark') {
+        this.mode = 'light';
+      } else {
+        this.mode = 'dark';
+      }
+    },
     searchUser(query) {
       this.hasError = false;
 

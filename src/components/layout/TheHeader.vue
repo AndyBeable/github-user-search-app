@@ -2,7 +2,7 @@
   <div class="header-container">
     <h1>devfinder</h1>
     <div class="mode-container">
-      <button @click="toggleTheme">{{ mode }}</button>
+      <button @click="$emit('toggle')">{{ mode }}</button>
       <img :src="moon" />
     </div>
   </div>
@@ -16,15 +16,10 @@ export default {
   data() {
     return {
       moon: moonIcon,
-      theme: '',
     };
   },
   methods: {
-    toggleTheme() {
-      console.log('test');
-      this.theme = this.theme == 'darkMode' ? '' : 'darkMode';
-      document.documentElement.setAttribute('data-theme', this.theme);
-    },
+    toggleTheme() {},
   },
 };
 </script>

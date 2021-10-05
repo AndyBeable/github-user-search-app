@@ -176,6 +176,11 @@ h5 {
   border-radius: 16px;
 }
 
+.dark .user-stats {
+  background-color: var(--bg-dark-color);
+  color: var(--bg-white);
+}
+
 @media screen and (min-width: 768px) {
   .user-stats {
     width: 80%;
@@ -195,6 +200,10 @@ h5 {
 .user-links {
   width: 80%;
   margin: 0 auto;
+}
+
+.dark .user-links {
+  color: var(--bg-white);
 }
 
 @media screen and (min-width: 768px) {

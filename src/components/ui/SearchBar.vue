@@ -89,6 +89,7 @@ input {
   caret-color: var(--light-blue);
   line-height: 30px;
   width: 185px;
+  background-color: inherit;
 }
 
 @media screen and (min-width: 768px) {
