@@ -242,7 +242,7 @@ h5 {
 .user-location-icon,
 .user-website-icon,
 .user-twitter-icon,
-.user-company-container img {
+.user-company-icon {
   margin-right: 1rem;
 }
 </style>

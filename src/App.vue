@@ -116,6 +116,6 @@ input {
 }
 
 .opacity-50 {
-  opacity: 90%;
+  color: #ffffff;
 }
 </style>
