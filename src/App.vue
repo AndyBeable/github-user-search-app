@@ -1,7 +1,7 @@
 <template>
-  <div class="app" :class="mode" @toggle="toggle">
+  <div class="app" :class="mode">
     <wrapper>
-      <the-header :mode="mode"></the-header>
+      <the-header :mode="mode" @toggle-mode="toggleMode"></the-header>
       <search-bar @on-search="searchUser" :has-error="hasError"></search-bar>
       <user-card v-if="userData" :user="userData"></user-card>
     </wrapper>
@@ -27,13 +27,21 @@ export default {
     return {
       userData: null,
       hasError: false,
-      mode: 'light',
+      mode: 'dark',
     };
   },
   created() {
     this.searchUser('octocat');
   },
   methods: {
+    toggleMode() {
+      console.log('clicked');
+      if (this.mode === 'dark') {
+        this.mode = 'light';
+      } else {
+        this.mode = 'dark';
+      }
+    },
     searchUser(query) {
       this.hasError = false;
 
