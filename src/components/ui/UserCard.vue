@@ -10,7 +10,7 @@
           <h5>@{{ user.login }}</h5>
         </div>
         <div>
-          <p>Joined {{ user.created_at }}</p>
+          <p>Joined {{ moment(user.created_at).format('MMM DD YYYY') }}</p>
         </div>
       </div>
     </div>
@@ -95,10 +95,13 @@ import websiteIcon from '../../../public/assets/icon-website.svg';
 import twitterIcon from '../../../public/assets/icon-twitter.svg';
 import companyIcon from '../../../public/assets/icon-company.svg';
 
+import moment from 'moment';
+
 export default {
   props: ['user'],
   data() {
     return {
+      moment: moment,
       locationIcon: locationIcon,
       websiteIcon: websiteIcon,
       twitterIcon: twitterIcon,
@@ -113,9 +116,10 @@ export default {
       return this.user.organizations_url;
     },
   },
-  methods: {
-    convertData() {
-      console.log(this.joined);
+
+  filters: {
+    moment: function(date) {
+      return moment(date).format('MMM DD YYYY');
     },
   },
 };
