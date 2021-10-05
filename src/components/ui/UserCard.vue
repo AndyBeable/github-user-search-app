@@ -40,7 +40,7 @@
           <div class="user-location-icon">
             <img :src="locationIcon" alt="Location" />
           </div>
-          <h6 class="user-link-text">London, United Kingdom</h6>
+          <p class="user-link-text">London, United Kingdom</p>
         </div>
         <div
           class="user-website-container"
@@ -49,12 +49,12 @@
           <div class="user-website-icon">
             <img :src="websiteIcon" alt="" />
           </div>
-          <h6 class="user-link-text">
+          <p class="user-link-text">
             <a v-if="user.blog" :href="user.blog" target="_blank">
               {{ user.blog }}
             </a>
             <span v-else>Not available</span>
-          </h6>
+          </p>
         </div>
       </div>
       <div class="right-container">
@@ -65,12 +65,12 @@
           <div class="user-twitter-icon">
             <img :src="twitterIcon" alt="" />
           </div>
-          <h6 class="user-link-text">
+          <p class="user-link-text">
             <a v-if="user.twitter_username" :href="twitterUrl" target="_blank">
               {{ user.twitter_username }}
             </a>
             <span v-else>Not available</span>
-          </h6>
+          </p>
         </div>
         <div
           class="user-company-container"
@@ -79,10 +79,10 @@
           <div class="user-company-icon">
             <img :src="companyIcon" alt="" />
           </div>
-          <h6 v-if="user.company" class="user-link-text">
+          <p v-if="user.company" class="user-link-text">
             {{ user.company }}
-          </h6>
-          <h6 v-else>Not available</h6>
+          </p>
+          <p v-else>Not available</p>
         </div>
       </div>
     </div>
@@ -167,7 +167,7 @@ h5 {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  background-color: #f6f8ff;
+  background-color: var(--light-color);
   margin: 0 auto;
   border-radius: 16px;
 }

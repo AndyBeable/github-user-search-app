@@ -50,6 +50,11 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
+:root {
+  --bg-light-color: #f6f8ff;
+  --text-light-color: #4b6a9b;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -61,11 +66,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #f6f8ff;
+  background-color: var(--bg-light-color);
 }
 
 p {
-  color: #4b6a9b;
+  color: var(--text-light-color);
 }
 
 a,
