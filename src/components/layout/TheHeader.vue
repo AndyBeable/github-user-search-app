@@ -48,4 +48,8 @@ button {
   border: none;
   cursor: pointer;
 }
+
+.light button {
+  color: var(--bg-white);
+}
 </style>
