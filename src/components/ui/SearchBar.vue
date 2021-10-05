@@ -38,6 +38,7 @@ export default {
   methods: {
     search() {
       this.$emit('onSearch', this.query);
+      this.query = '';
     },
   },
 };

@@ -116,12 +116,6 @@ export default {
       return this.user.organizations_url;
     },
   },
-
-  filters: {
-    moment: function(date) {
-      return moment(date).format('MMM DD YYYY');
-    },
-  },
 };
 </script>
 
