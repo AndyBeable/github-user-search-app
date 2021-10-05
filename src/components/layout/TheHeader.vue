@@ -2,9 +2,11 @@
   <div class="header-container">
     <h1>devfinder</h1>
     <div class="mode-container">
-      <button @click="$emit('toggleMode')">{{ mode }}</button>
-      <img v-if="mode === 'LIGHT'" :src="sun" />
-      <img v-else :src="moon" />
+      <button @click="$emit('toggleMode')">
+        {{ mode }}
+        <img v-if="mode === 'LIGHT'" :src="sun" />
+        <img v-else :src="moon" />
+      </button>
     </div>
   </div>
 </template>
@@ -47,6 +49,10 @@ button {
   background-color: inherit;
   border: none;
   cursor: pointer;
+}
+
+button img {
+  margin-left: 5px;
 }
 
 .LIGHT button {
