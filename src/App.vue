@@ -27,7 +27,7 @@ export default {
     return {
       userData: null,
       hasError: false,
-      mode: 'dark',
+      mode: 'DARK',
     };
   },
   created() {
@@ -36,10 +36,10 @@ export default {
   methods: {
     toggleMode() {
       console.log('clicked');
-      if (this.mode === 'dark') {
-        this.mode = 'light';
+      if (this.mode === 'DARK') {
+        this.mode = 'LIGHT';
       } else {
-        this.mode = 'dark';
+        this.mode = 'DARK';
       }
     },
     searchUser(query) {
@@ -90,7 +90,7 @@ body {
   background-color: var(--bg-light-color);
 }
 
-.light {
+.LIGHT {
   background: var(--bg-dark-color);
 }
 

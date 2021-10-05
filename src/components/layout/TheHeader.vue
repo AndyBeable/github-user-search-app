@@ -31,7 +31,7 @@ export default {
   width: 80%;
 }
 
-.light h1 {
+.LIGHT h1 {
   color: var(--bg-white);
 }
 
@@ -49,7 +49,7 @@ button {
   cursor: pointer;
 }
 
-.light button {
+.LIGHT button {
   color: var(--bg-white);
 }
 </style>
