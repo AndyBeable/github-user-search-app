@@ -3,7 +3,7 @@
     <h1>devfinder</h1>
     <div class="mode-container">
       <button @click="$emit('toggleMode')">{{ mode }}</button>
-      <img v-if="mode === 'light'" :src="sun" />
+      <img v-if="mode === 'LIGHT'" :src="sun" />
       <img v-else :src="moon" />
     </div>
   </div>

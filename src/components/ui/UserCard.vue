@@ -185,6 +185,10 @@ h5 {
   color: var(--bg-white);
 }
 
+.LIGHT .user-stats h4 {
+  color: var(--bg-white);
+}
+
 @media screen and (min-width: 768px) {
   .user-stats {
     width: 80%;
@@ -206,7 +210,7 @@ h5 {
   margin: 0 auto;
 }
 
-.DARK .user-links {
+.LIGHT .user-link-text {
   color: var(--bg-white);
 }
 
