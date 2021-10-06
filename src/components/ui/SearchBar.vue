@@ -23,6 +23,7 @@
 import searchIcon from '../../../public/assets/icon-search.svg';
 
 export default {
+  emits: ['onSearch'],
   props: {
     hasError: {
       type: Boolean,
