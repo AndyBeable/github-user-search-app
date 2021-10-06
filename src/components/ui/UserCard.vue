@@ -77,7 +77,7 @@
           :class="{ 'opacity-50': !user.company }"
         >
           <div class="user-company-icon">
-            <img :src="companyIcon" alt="" />
+            <company-icon />
           </div>
           <p v-if="user.company" class="user-link-text">
             {{ user.company }}
@@ -93,20 +93,19 @@
 import locationIcon from '../../../public/assets/icon-location.svg';
 import websiteIcon from '../../../public/assets/icon-website.svg';
 
-import companyIcon from '../../../public/assets/icon-company.svg';
+import CompanyIcon from '../../components/icons/Company.vue';
 import TwitterIcon from '../../components/icons/Twitter.vue';
 
 import moment from 'moment';
 
 export default {
   props: ['user'],
-  components: { TwitterIcon },
+  components: { TwitterIcon, CompanyIcon },
   data() {
     return {
       moment: moment,
       locationIcon: locationIcon,
       websiteIcon: websiteIcon,
-      companyIcon: companyIcon,
     };
   },
   computed: {
