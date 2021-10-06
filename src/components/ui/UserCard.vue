@@ -47,7 +47,7 @@
           :class="{ 'opacity-50': !user.blog }"
         >
           <div class="user-website-icon">
-            <img :src="websiteIcon" alt="" />
+            <website-icon />
           </div>
           <p class="user-link-text">
             <a v-if="user.blog" :href="user.blog" target="_blank">
@@ -91,21 +91,18 @@
 
 <script>
 import locationIcon from '../../../public/assets/icon-location.svg';
-import websiteIcon from '../../../public/assets/icon-website.svg';
-
-import CompanyIcon from '../../components/icons/Company.vue';
+import WebsiteIcon from '../../components/icons/Website.vue';
 import TwitterIcon from '../../components/icons/Twitter.vue';
+import CompanyIcon from '../../components/icons/Company.vue';
 
 import moment from 'moment';
 
 export default {
   props: ['user'],
-  components: { TwitterIcon, CompanyIcon },
+  components: { TwitterIcon, CompanyIcon, WebsiteIcon },
   data() {
     return {
       moment: moment,
-      locationIcon: locationIcon,
-      websiteIcon: websiteIcon,
     };
   },
   computed: {
