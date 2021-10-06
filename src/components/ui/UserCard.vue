@@ -38,7 +38,7 @@
       <div class="left-container">
         <div class="user-location-container">
           <div class="user-location-icon">
-            <img :src="locationIcon" alt="Location" />
+            <location-icon />
           </div>
           <p class="user-link-text">London, United Kingdom</p>
         </div>
@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import locationIcon from '../../../public/assets/icon-location.svg';
+import LocationIcon from '../../components/icons/Location.vue';
 import WebsiteIcon from '../../components/icons/Website.vue';
 import TwitterIcon from '../../components/icons/Twitter.vue';
 import CompanyIcon from '../../components/icons/Company.vue';
@@ -99,7 +99,7 @@ import moment from 'moment';
 
 export default {
   props: ['user'],
-  components: { TwitterIcon, CompanyIcon, WebsiteIcon },
+  components: { TwitterIcon, CompanyIcon, WebsiteIcon, LocationIcon },
   data() {
     return {
       moment: moment,
