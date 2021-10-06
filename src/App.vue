@@ -1,7 +1,7 @@
 <template>
-  <div class="app" :class="mode">
+  <div class="app" :class="isDark ? 'DARK' : 'LIGHT'">
     <wrapper>
-      <the-header :mode="mode" @toggle-mode="toggleMode"></the-header>
+      <the-header :is-dark="isDark" @toggle-mode="toggleMode"></the-header>
       <search-bar @on-search="searchUser" :has-error="hasError"></search-bar>
       <user-card v-if="userData" :user="userData"></user-card>
     </wrapper>
@@ -27,7 +27,7 @@ export default {
     return {
       userData: null,
       hasError: false,
-      mode: 'DARK',
+      isDark: false,
     };
   },
   created() {
@@ -35,12 +35,7 @@ export default {
   },
   methods: {
     toggleMode() {
-      console.log('clicked');
-      if (this.mode === 'DARK') {
-        this.mode = 'LIGHT';
-      } else {
-        this.mode = 'DARK';
-      }
+      this.isDark = !this.isDark;
     },
     searchUser(query) {
       this.hasError = false;
@@ -62,15 +57,27 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 :root {
-  --bg-light-color: #f6f8ff;
-  --bg-white: #fefefe;
-  --text-light-color: #4b6a9b;
-  --bg-dark-color: #141d2f;
-  --bg-dark-color-2: #1e2a47;
-  --text-dark-color: #ffffff;
-  --light-blue-bold: #0079ff;
+  --white: #fff;
+  --black: #000;
+  --dark-blue: #1e2a47;
+  --darker-blue: #141d2f;
+  --blue: #0079ff;
   --light-blue: #60abff;
-  --light-grey: #697c9a;
+  --grey: #697c9a;
+  --blue-grey: #4b6a9b;
+  --light-grey: #f6f8ff;
+
+  --bg-color: var(--light-grey);
+  --card-bg: var(--white);
+  --heading-color: var(--black);
+  --text-color: var(--blue-grey);
+}
+
+.DARK {
+  --bg-color: var(--dark-blue);
+  --card-bg: var(--darker-blue);
+  --heading-color: var(--white);
+  --text-color: var(--white);
 }
 
 * {
@@ -87,15 +94,11 @@ body {
 }
 
 .app {
-  background-color: var(--bg-light-color);
-}
-
-.LIGHT {
-  background: var(--bg-dark-color);
+  background-color: var(--bg-color);
 }
 
 p {
-  color: var(--text-light-color);
+  color: var(--text-color);
 }
 
 a,

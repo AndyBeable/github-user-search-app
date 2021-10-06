@@ -50,17 +50,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: var(--bg-white);
+  background-color: var(--card-bg);
   box-shadow: 0 16px 30px -10px rgb(70 96 187 / 20%);
   margin: 25px 0;
   border-radius: 15px;
   width: 100%;
   padding: 0.5rem 0;
-}
-
-.LIGHT .search-container {
-  background-color: var(--bg-dark-color-2);
-  box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -99,13 +94,13 @@ input {
   }
 }
 
-.LIGHT input[type='text']::placeholder {
-  color: var(--bg-white);
+input[type='text']::placeholder {
+  color: var(--text-color);
 }
 
 button {
-  background-color: var(--light-blue-bold);
-  color: var(--bg-light-color);
+  background-color: var(--blue);
+  color: var(--white);
   border: none;
   border-radius: 10px;
   padding: 0.8rem 1.2rem;

@@ -3,8 +3,8 @@
     <h1>devfinder</h1>
     <div class="mode-container">
       <button @click="$emit('toggleMode')">
-        {{ mode }}
-        <img v-if="mode === 'LIGHT'" :src="sun" />
+        {{ isDark ? 'LIGHT' : 'DARK' }}
+        <img v-if="isDark" :src="sun" />
         <img v-else :src="moon" />
       </button>
     </div>
@@ -15,7 +15,7 @@
 import moonIcon from '../../../public/assets/icon-moon.svg';
 import sunIcon from '../../../public/assets/icon-sun.svg';
 export default {
-  props: ['mode'],
+  props: ['isDark'],
   data() {
     return {
       moon: moonIcon,
@@ -33,8 +33,8 @@ export default {
   width: 80%;
 }
 
-.LIGHT h1 {
-  color: var(--bg-white);
+h1 {
+  color: var(--heading-color);
 }
 
 .mode-container {
@@ -45,7 +45,7 @@ export default {
 button {
   display: flex;
   justify-content: space-between;
-  color: #697c9a;
+  color: var(--text-color);
   background-color: inherit;
   border: none;
   cursor: pointer;
@@ -53,9 +53,5 @@ button {
 
 button img {
   margin-left: 5px;
-}
-
-.LIGHT button {
-  color: var(--bg-white);
 }
 </style>

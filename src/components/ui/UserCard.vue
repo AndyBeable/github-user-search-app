@@ -63,7 +63,7 @@
           :class="{ 'opacity-50': !user.twitter_username }"
         >
           <div class="user-twitter-icon">
-            <img :src="twitterIcon" alt="" />
+            <twitter-icon />
           </div>
           <p class="user-link-text">
             <a v-if="user.twitter_username" :href="twitterUrl" target="_blank">
@@ -92,19 +92,20 @@
 <script>
 import locationIcon from '../../../public/assets/icon-location.svg';
 import websiteIcon from '../../../public/assets/icon-website.svg';
-import twitterIcon from '../../../public/assets/icon-twitter.svg';
+
 import companyIcon from '../../../public/assets/icon-company.svg';
+import TwitterIcon from '../../components/icons/Twitter.vue';
 
 import moment from 'moment';
 
 export default {
   props: ['user'],
+  components: { TwitterIcon },
   data() {
     return {
       moment: moment,
       locationIcon: locationIcon,
       websiteIcon: websiteIcon,
-      twitterIcon: twitterIcon,
       companyIcon: companyIcon,
     };
   },
@@ -121,20 +122,15 @@ export default {
 
 <style scoped>
 h5 {
-  color: var(--light-blue-bold);
+  color: var(--blue);
   font-weight: 400;
 }
 
 .user-card-container {
-  background-color: var(--bg-white);
+  background-color: var(--card-bg);
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 3px 10px 3px #c4c9e470;
-}
-
-.LIGHT .user-card-container {
-  background-color: var(--bg-dark-color-2);
-  box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -156,8 +152,8 @@ h5 {
   }
 }
 
-.LIGHT .user-details h3 {
-  color: var(--bg-white);
+.user-details h3 {
+  color: var(--heading-color);
 }
 
 .user-details-profile {
@@ -175,18 +171,17 @@ h5 {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  background-color: var(--bg-light-color);
+  background-color: var(--bg-color);
   margin: 0 auto;
   border-radius: 16px;
 }
 
-.LIGHT .user-stats {
-  background-color: var(--bg-dark-color);
-  color: var(--bg-white);
+.user-stats h2 {
+  color: var(--heading-color);
 }
 
-.LIGHT .user-stats h4 {
-  color: var(--bg-white);
+.user-stats h4 {
+  color: var(--text-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -196,7 +191,6 @@ h5 {
 }
 
 .user-stats h4 {
-  color: #4b6a9b;
   font-size: 12px;
   font-weight: 400;
 }
@@ -210,8 +204,8 @@ h5 {
   margin: 0 auto;
 }
 
-.LIGHT .user-link-text {
-  color: var(--bg-white);
+.user-link-text {
+  color: var(--text-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -244,5 +238,9 @@ h5 {
 .user-twitter-icon,
 .user-company-icon {
   margin-right: 1rem;
+}
+
+.DARK .user-card-container {
+  box-shadow: none;
 }
 </style>
